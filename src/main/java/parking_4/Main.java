@@ -15,11 +15,11 @@ public class Main {
 
         while(true) {
             System.out.print("Введіть команду: ");
-            resolveMap(ParkingUtil.scan.nextLine().trim().toUpperCase());
+            resolve(ParkingUtil.scan.nextLine().trim().toUpperCase());
         }
     }
 
-    public static void resolveMap(String s) {
+    public static void resolve(String s) {
         if (s.matches("^[A-Z]{2}\\d{4}[A-Z]{2}$")) {
             System.out.print("Введіть ім'я власника: ");
             String name = ParkingUtil.scan.nextLine();
