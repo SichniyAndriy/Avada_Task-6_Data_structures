@@ -16,11 +16,11 @@ public class Main {
         while (true) {
             System.out.print("Введіть команду: ");
             String s = ParkingUtil.scan.nextLine().trim().toUpperCase();
-            resolver(s);
+            indexResolver(s);
         }
     }
 
-    public static void resolver(String s) {
+    public static void indexResolver(String s) {
         if (s.matches("^[A-Z]{2}\\d{4}[A-Z]{2}$")) {
             System.out.print("Введіть індекс: ");
             int nextInt = ParkingUtil.scan.nextInt();

@@ -19,4 +19,16 @@ public class ParkingUtil {
         numberList.add("VB5567JJ");
         numberSet.addAll(numberList);
     }
+
+    public static void resolver(String s) {
+        if (s.matches("^[A-Z]{2}\\d{4}[A-Z]{2}$")) {
+            ParkingUtil.numberList.add(s);
+        } else {
+            switch (s) {
+                case "СПИСОК", "LIST" -> ParkingUtil.numberList.forEach(System.out::println);
+                case "СТОП", "STOP" -> { ParkingUtil.scan.close(); System.exit(0); }
+                default -> System.out.println("Невідома команда. Перевірте ввод");
+            }
+        }
+    }
 }
