@@ -25,16 +25,16 @@ public class Main {
             System.out.print("Введіть індекс: ");
             int nextInt = ParkingUtil.scan.nextInt();
             ParkingUtil.scan.nextLine();
-            if (nextInt > ParkingUtil.numbers.size()) {
-                ParkingUtil.numbers.add(s);
+            if (nextInt > ParkingUtil.numberList.size()) {
+                ParkingUtil.numberList.add(s);
             } else {
-                ParkingUtil.numbers.add(nextInt - 1, s);
+                ParkingUtil.numberList.add(nextInt - 1, s);
             }
         } else {
             switch (s) {
                 case "СПИСОК", "LIST" -> {
                     AtomicInteger i = new AtomicInteger();
-                    ParkingUtil.numbers.forEach(el -> System.out.println(i.incrementAndGet() + " " + el));
+                    ParkingUtil.numberList.forEach(el -> System.out.println(i.incrementAndGet() + " " + el));
                 }
                 case "СТОП", "STOP" -> {
                     ParkingUtil.scan.close();

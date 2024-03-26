@@ -1,18 +1,22 @@
 package main.java;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 public class ParkingUtil {
-    public final static List<String> numbers = new ArrayList<>();
+    public final static List<String> numberList = new ArrayList<>();
+    public final  static Set<String> numberSet = new HashSet<>();
     public final static Scanner scan = new Scanner(System.in);
 
     static {
-        numbers.add("JF8854LK");
-        numbers.add("DD3454OK");
-        numbers.add("SD5667GG");
-        numbers.add("HJ5467FD");
-        numbers.add("VB5567JJ");
+        numberList.add("JF8854LK");
+        numberList.add("DD3454OK");
+        numberList.add("SD5667GG");
+        numberList.add("HJ5467FD");
+        numberList.add("VB5567JJ");
+        numberSet.addAll(numberList);
     }
 }
