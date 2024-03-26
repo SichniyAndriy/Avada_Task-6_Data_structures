@@ -5,7 +5,7 @@ import main.java.ParkingUtil;
 public class Main {
     public static void main(String[] args) {
         System.out.println("""
-                        Вітаю в програмі ПАРКІНГ 0.1
+                        Вітаю в програмі ПАРКІНГ 0.3
                         Введіть:
                         стоп - для виходу з програми
                         список - для виводу всіх померів
@@ -13,11 +13,11 @@ public class Main {
 
         while(true) {
             System.out.print("Введіть команду: ");
-            resolve(ParkingUtil.scan.nextLine().trim().toUpperCase());
+            resolveSet(ParkingUtil.scan.nextLine().trim().toUpperCase());
         }
     }
 
-    public static void resolve(String s) {
+    public static void resolveSet(String s) {
         if (s.matches("^[A-Z]{2}\\d{4}[A-Z]{2}$")) {
             ParkingUtil.numberSet.add(s);
         } else {
