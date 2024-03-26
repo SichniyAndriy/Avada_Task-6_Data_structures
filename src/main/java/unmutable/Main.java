@@ -1,4 +1,4 @@
-package unmutable;
+package main.java.unmutable;
 
 import java.util.Collections;
 import java.util.List;

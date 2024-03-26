@@ -1,4 +1,4 @@
-package mutable;
+package main.java.mutable;
 
 import java.util.ArrayList;
 import java.util.HashSet;
