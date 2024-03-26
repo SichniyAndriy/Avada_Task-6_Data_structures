@@ -8,15 +8,11 @@ public class ParkingUtil {
     public final static List<String> numbers = new ArrayList<>();
     public final static Scanner scan = new Scanner(System.in);
 
-    public static void resolver(String s) {
-        if (s.matches("^[A-Z]{2}\\d{4}[A-Z]{2}$")) {
-            numbers.add(s);
-        } else {
-            switch (s) {
-                case "СПИСОК", "LIST" -> numbers.forEach(System.out::println);
-                case "СТОП", "STOP" -> { scan.close(); System.exit(0); }
-                default -> System.out.println("Невідома команда. Перевірте ввод");
-            }
-        }
+    static {
+        numbers.add("JF8854LK");
+        numbers.add("DD3454OK");
+        numbers.add("SD5667GG");
+        numbers.add("HJ5467FD");
+        numbers.add("VB5567JJ");
     }
 }
