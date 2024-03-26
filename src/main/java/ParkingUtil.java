@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class ParkingUtil {
     public final static List<String> numberList = new ArrayList<>();
-    public final  static Set<String> numberSet = new HashSet<>();
+    public final static Set<String> numberSet = new HashSet<>();
     public final static Scanner scan = new Scanner(System.in);
 
     static {
@@ -17,7 +17,14 @@ public class ParkingUtil {
         numberList.add("SD5667GG");
         numberList.add("HJ5467FD");
         numberList.add("VB5567JJ");
-        numberSet.addAll(numberList);
+    }
+
+    static {
+        numberSet.add("JF8854LK");
+        numberSet.add("DD3454OK");
+        numberSet.add("SD5667GG");
+        numberSet.add("HJ5467FD");
+        numberSet.add("VB5567JJ");
     }
 
     public static void resolver(String s) {
