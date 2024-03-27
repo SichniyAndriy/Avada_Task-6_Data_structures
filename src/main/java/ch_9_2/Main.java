@@ -1,4 +1,4 @@
-package main.java.parking_2;
+package main.java.ch_9_2;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import main.java.ParkingUtil;

@@ -1,4 +1,4 @@
-package main.java.compare_list;
+package main.java.ch_9_5;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;

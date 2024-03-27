@@ -1,4 +1,4 @@
-package main.java.mutable;
+package main.java.ch_6_mutable;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -11,7 +11,6 @@ import net.datafaker.Faker;
 
 public class Main {
     public final static Faker faker = new Faker(Locale.getDefault());
-
     private final static Integer LENGTH = 20;
 
     public static void main(String[] args) {
