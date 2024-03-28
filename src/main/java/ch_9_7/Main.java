@@ -29,5 +29,9 @@ public class Main {
         int[] arrCopy4 = arr.clone();
         SortUtil.heap(arrCopy4);
         System.out.println("Heap sort:\t\t" + Arrays.toString(arrCopy4));
+
+        int[] arrCopy5 = arr.clone();
+        SortUtil.shell(arrCopy5);
+        System.out.println("Shell sort:\t\t" + Arrays.toString(arrCopy5));
     }
 }

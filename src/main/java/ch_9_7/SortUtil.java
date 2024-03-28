@@ -9,7 +9,7 @@ public class SortUtil {
         for (int i = len / 2 - 1; i >= 0 ; --i) {
             heapify(arr, len, i);
         }
-        for (int i = len - 1; i >= 0 ; --i) {
+        for (int i = len - 1; i > 0 ; --i) {
             swap(arr, i, 0);
             heapify(arr, i, 0);
         }
@@ -32,13 +32,14 @@ public class SortUtil {
             heapify(arr, len, indexMax);
         }
     }
+
     //------------------------------  MERGE SORT ------------------------------\\
-    public static void merge(int[] arr) {
-        int[] tmpArr = new int[arr.length];
+    public static void merge(final int[] arr) {
+        final int[] tmpArr = new int[arr.length];
         merge(arr, tmpArr, 0, arr.length - 1);
     }
 
-    private static void merge(int[] arr, int[] tmpArr, int from, int to) {
+    private static void merge(final int[] arr, final int[] tmpArr, final int from, final int to) {
         if (from >= to) {
             return;
         }
@@ -48,7 +49,7 @@ public class SortUtil {
         merging(arr, tmpArr, from, mid, to);
     }
 
-    private static void merging(int[] arr, int[] tmpArr, int from, int mid, int to) {
+    private static void merging(final int[] arr, final int[] tmpArr, final int from, final int mid, final int to) {
         int len = to - from + 1;
         Arrays.fill(tmpArr, 0);
         System.arraycopy(arr, from, tmpArr, from, len);
@@ -64,7 +65,7 @@ public class SortUtil {
     }
 
     //------------------------------  SHAKER SORT ------------------------------\\
-    public static void shaker(int[] arr) {
+    public static void shaker(final int[] arr) {
         int left = 0;
         int right = arr.length - 1;
         int control = 0;
@@ -87,10 +88,11 @@ public class SortUtil {
     }
 
     //------------------------------  QUICK SORT  ------------------------------\\
-    public static void quick(int[] arr) {
+    public static void quick(final int[] arr) {
         quick(arr, 0,arr.length - 1);
     }
-    private static void quick(int[] arr, final int from, final int to) {
+
+    private static void quick(final int[] arr, final int from, final int to) {
         if (from >= to) {
             return;
         }
@@ -113,8 +115,20 @@ public class SortUtil {
         quick(arr, i, to);
     }
 
+    //------------------------------  SHELL SORT  ------------------------------\\
+    public static void shell(final int[] arr) {
+        final int len = arr.length;
+        for (int gap = len >> 1; gap > 0 ; gap >>= 1) {
+            for (int i = gap; i < len; i += gap) {
+                for (int j = i; j >= gap && arr[j] < arr[j - gap] ; --j) {
+                    swap(arr, j, j - gap);
+                }
+            }
+        }
+    }
+
     //------------------------------  SERVICE  ------------------------------\\
-    private static void swap(int[] arr, int i, int j) {
+    private static void swap(final int[] arr, final int i, final int j) {
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;
