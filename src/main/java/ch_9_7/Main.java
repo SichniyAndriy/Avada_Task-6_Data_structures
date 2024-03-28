@@ -16,11 +16,18 @@ public class Main {
 
         int[] arrCopy1 = arr.clone();
         SortUtil.quick(arrCopy1);
-        System.out.println("Quick Sort:\t\t" + Arrays.toString(arrCopy1));
+        System.out.println("Quick sort:\t\t" + Arrays.toString(arrCopy1));
 
         int[] arrCopy2 = arr.clone();
         SortUtil.shaker(arrCopy2);
-        System.out.println("Shaker Sort:\t" + Arrays.toString(arrCopy2));
+        System.out.println("Shaker sort:\t" + Arrays.toString(arrCopy2));
 
+        int[] arrCopy3 = arr.clone();
+        SortUtil.merge(arrCopy3);
+        System.out.println("Merge sort:\t\t" + Arrays.toString(arrCopy3));
+
+        int[] arrCopy4 = arr.clone();
+        SortUtil.heap(arrCopy4);
+        System.out.println("Heap sort:\t\t" + Arrays.toString(arrCopy4));
     }
 }
