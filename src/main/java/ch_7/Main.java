@@ -32,6 +32,6 @@ class User <T1 extends Comparable<T1>, T2 extends Number, V> {
 }
 
 
-class A<U extends User<T1, T2, V>, T2 extends Number, V, T1 extends Comparable<T1>> {
+class A<U extends User<T1, T2, V>, T2 extends Number, T1 extends Comparable<T1>, V> {
     U u;
 }
