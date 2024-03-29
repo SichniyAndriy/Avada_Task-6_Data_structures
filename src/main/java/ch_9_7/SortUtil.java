@@ -4,6 +4,13 @@ import java.util.Arrays;
 
 public class SortUtil {
     //------------------------------  HEAP SORT  ------------------------------\\
+    /*
+     * Complexity
+     * Worst - O(n log n)
+     * Average - O(n log n)
+     * Best - O(n log n) or O(n)
+     * Memory - O(1)
+     */
     public static void heap(final int[] arr) {
        final int len = arr.length;
         for (int i = len / 2 - 1; i >= 0 ; --i) {
@@ -34,41 +41,55 @@ public class SortUtil {
     }
 
     //------------------------------  MERGE SORT ------------------------------\\
+    /*
+    * Complexity
+    * Worst - O(n log n)
+    * Average - O(n log n)
+    * Best - O(n log n)
+    * Memory - O(log n)
+     */
     public static void merge(final int[] arr) {
-        final int[] tmpArr = new int[arr.length];
-        merge(arr, tmpArr, 0, arr.length - 1);
+        final int[] buffer = new int[arr.length];
+        merge(arr, buffer, 0, arr.length - 1);
     }
 
-    private static void merge(final int[] arr, final int[] tmpArr, final int from, final int to) {
+    private static void merge(final int[] arr, final int[] buffer, final int from, final int to) {
         if (from >= to) {
             return;
         }
         int mid = from + (to - from) / 2;
-        merge(arr, tmpArr, from, mid);
-        merge(arr, tmpArr, mid + 1, to);
-        merging(arr, tmpArr, from, mid, to);
+        merge(arr, buffer, from, mid);
+        merge(arr, buffer, mid + 1, to);
+        merging(arr, buffer, from, mid, to);
     }
 
-    private static void merging(final int[] arr, final int[] tmpArr, final int from, final int mid, final int to) {
+    private static void merging(final int[] arr, final int[] buffer, final int from, final int mid, final int to) {
         int len = to - from + 1;
-        Arrays.fill(tmpArr, 0);
-        System.arraycopy(arr, from, tmpArr, from, len);
+        Arrays.fill(buffer, 0);
+        System.arraycopy(arr, from, buffer, from, len);
         int i = from;
         int j = mid + 1;
 
         for (int k = from; k <= to ; ++k) {
-            if (i > mid) arr[k] = tmpArr[j++];
-            else if (j > to) arr[k] = tmpArr[i++];
-            else if (tmpArr[i] < tmpArr[j]) arr[k] = tmpArr[i++];
-            else arr[k] = tmpArr[j++];
+            if (i > mid) arr[k] = buffer[j++];
+            else if (j > to) arr[k] = buffer[i++];
+            else if (buffer[i] < buffer[j]) arr[k] = buffer[i++];
+            else arr[k] = buffer[j++];
         }
     }
 
     //------------------------------  SHAKER SORT ------------------------------\\
+    /*
+     * Complexity
+     * Worst - O(n^2)
+     * Average - O(n^2)
+     * Best - O(n)
+     * Memory - O(1)
+     */
     public static void shaker(final int[] arr) {
         int left = 0;
         int right = arr.length - 1;
-        int control = 0;
+        int control = arr.length / 2;
         do {
             for (int i = left; i < right; ++i) {
                 if (arr[i] > arr[i + 1]) {
@@ -88,6 +109,13 @@ public class SortUtil {
     }
 
     //------------------------------  QUICK SORT  ------------------------------\\
+    /*
+     * Complexity
+     * Worst - O(n^2)
+     * Average - O(n log n)
+     * Best - O(n log n)
+     * Memory - O(log n)
+     */
     public static void quick(final int[] arr) {
         quick(arr, 0,arr.length - 1);
     }
@@ -116,9 +144,16 @@ public class SortUtil {
     }
 
     //------------------------------  SHELL SORT  ------------------------------\\
+    /*
+     * Complexity
+     * Worst - O(n^2)
+     * Average - O(n log n)
+     * Best - ???O(n log n)???
+     * Memory - O(1)
+     */
     public static void shell(final int[] arr) {
         final int len = arr.length;
-        for (int gap = len >> 1; gap > 0 ; gap >>= 1) {
+        for (int gap = len >> 2; gap > 0 ; gap >>= 1) {
             for (int i = gap; i < len; i += gap) {
                 for (int j = i; j >= gap && arr[j] < arr[j - gap] ; --j) {
                     swap(arr, j, j - gap);
